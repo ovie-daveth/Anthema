@@ -3,24 +3,7 @@ import { AiTwotoneDelete } from 'react-icons/ai'
 import AddItem from './AddItem'
 
 const Content = () => {
-    const [items, setItems] = useState([
-        {
-            id: 1,
-            item: 'Washing Plates',
-            checked: false
-        },
-        {
-            id: 2,
-            item: 'Washing Pots',
-            checked: false
-        },
-        {
-            id: 3,
-            item: 'Washing Cups',
-            checked: true
-        },
-    ])
-
+    const [items, setItems] = useState(JSON.parse(localStorage.getItem('key')))
 
     const onChange = (id) => {
         const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item)
