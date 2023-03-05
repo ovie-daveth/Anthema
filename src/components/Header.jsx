@@ -32,8 +32,8 @@ const Header = () => {
     </div>
     <div className={`md:flex text-white gap-5 font-semibold text-lg  ${!menuOpen ? 'flex flex-col justify-around items-center gap-5 bg-gray-600 px-10 absolute top-14 right-0 bottom-0 w-full transition-all ease-in-out .5s z-0': "z-0 md:translate-y-0 flex -translate-y-48"}`}>
         <NavLink to='/' className=' hover:text-red-200 py-1 hover:border-b-2 border-red-200 transition-all .4s ease-in-out cursor-pointer'>Home</NavLink>
-        <NavLink to="/" className=' hover:text-red-200  py-1 hover:border-b-2 border-red-200 transition-all .4s ease-in-out cursor-pointer'>Meet</NavLink>
-        <NavLink to="/" className=' hover:text-red-200  py-1 hover:border-b-2 border-red-200 transition-all .4s ease-in-out cursor-pointer'>Socials</NavLink>
+        <NavLink to="/meet" className=' hover:text-red-200  py-1 hover:border-b-2 border-red-200 transition-all .4s ease-in-out cursor-pointer'>Meet</NavLink>
+        <NavLink to="/todo" className=' hover:text-red-200  py-1 hover:border-b-2 border-red-200 transition-all .4s ease-in-out cursor-pointer'>Socials</NavLink>
         <NavLink to="/" className=' hover:text-red-200  py-1 hover:border-b-2 border-red-200 transition-all .4s ease-in-out cursor-pointer'>Double</NavLink>
         <NavLink to="/" className=' hover:text-red-200   py-1 transition-all .4s ease-in-out cursor-pointer relative'
         onMouseUp={onhover}
