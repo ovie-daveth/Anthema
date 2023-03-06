@@ -1,30 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { FaPlus, FaMinus } from 'react-icons/fa'
 
 const Todo = () => {
-    const [items, setItems] = useState([
-        {
-            id: 1,
-            item: 'This is a boy',
-            checked: false
-        },
-        {
-            id: 2,
-            item: 'This is a girl',
-            checked: false
-        },
-        {
-            id: 3,
-            item: 'This is a cat',
-            checked: false
-        },
-    ])
+    const [items, setItems] = useState([])
+
+    // useEffect(() => {
+    //     fetch(` http://localhost:3500/items`)
+    //     .then((response) => response.json())
+    //     .then((data) => setItems(data))
+    // }, [])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:3500/items')
+                const listItems = await response.json()
+                setItems(listItems)
+            } catch (error) {
+                alert(error.stack)
+            }
+        }
+
+        fetchData();
+    }, [])
 
     const [search, SetSearch] = useState("")
 
     const SearchEl = (e)=>{
         SetSearch(e.target.value)
-        const listItems = items.filter((item) => (item.item).toLowerCase().includes(search.toLowerCase()))
+        const listItems = items.filter(item => ((item.item).toLowerCase().includes(search.toLowerCase())))
         setItems(listItems)
     }
 
